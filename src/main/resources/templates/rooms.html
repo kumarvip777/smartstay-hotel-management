@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Rooms</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+
+    <div class="logo">
+        <h2 th:text="${hotelName}"></h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a th:href="@{/}">Home</a>
+        </li>
+
+        <li>
+            <a th:href="@{/rooms}">Rooms</a>
+        </li>
+
+        <li>
+            <a th:href="@{/booking}">Booking</a>
+        </li>
+
+        <li>
+            <a th:href="@{/contact}">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- Rooms Header -->
+<section class="rooms-header">
+
+    <h1>Our Luxury Rooms</h1>
+
+    <p>
+        Experience comfort, elegance and premium hospitality.
+    </p>
+
+</section>
+
+<!-- Rooms Section -->
+<section class="rooms-section">
+
+    <div class="room-container">
+
+        <!-- Thymeleaf Loop -->
+        <div class="room-card"
+             th:each="room : ${rooms}">
+
+            <!-- Room Image -->
+            <div class="room-image">
+
+                <img th:src="@{${room.imageUrl}}"
+                     alt="Room Image">
+
+            </div>
+
+            <!-- Room Details -->
+            <div class="room-details">
+
+                <h2 th:text="${room.name}"></h2>
+
+                <p>
+                    Type :
+                    <span th:text="${room.type}"></span>
+                </p>
+
+                <p>
+                    Price :
+                    ₹<span th:text="${room.price}"></span>
+                    / Night
+                </p>
+
+                <button>
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

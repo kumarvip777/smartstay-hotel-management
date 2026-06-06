@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+    <title>Booking</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
 </head>
+
 <body>
-$END$
+
+<!-- Navbar -->
+<nav>
+
+    <h2 th:text="${hotelName}"></h2>
+
+    <ul>
+
+        <li>
+            <a th:href="@{/}">Home</a>
+        </li>
+
+        <li>
+            <a th:href="@{/rooms}">Rooms</a>
+        </li>
+
+        <li>
+            <a th:href="@{/booking}">Booking</a>
+        </li>
+
+        <li>
+            <a th:href="@{/contact}">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- Booking Section -->
+<section class="booking-page">
+
+    <div class="booking-form-container">
+
+        <h1>Room Booking</h1>
+
+        <form th:action="@{/saveBooking}"
+              th:object="${booking}"
+              method="post">
+
+            <!-- Name -->
+            <input type="text"
+                   th:field="*{customerName}"
+                   placeholder="Enter Your Name">
+
+            <!-- Check In -->
+            <input type="date"
+                   th:field="*{checkInDate}">
+
+            <!-- Check Out -->
+            <input type="date"
+                   th:field="*{checkOutDate}">
+
+            <!-- Room Type -->
+            <select th:field="*{roomType}">
+
+                <option value="">
+                    Select Room
+                </option>
+
+                <option value="Single Room">
+                    Single Room
+                </option>
+
+                <option value="Double Room">
+                    Double Room
+                </option>
+
+                <option value="Deluxe Room">
+                    Deluxe Room
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Book Now
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
 </body>
 </html>

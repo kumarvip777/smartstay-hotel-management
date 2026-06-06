@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Stay Luxury Hotel</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Royal Stay
+    </div>
+
+    <nav class="nav-links">
+
+        <a th:href="@{/}">
+            Home
+        </a>
+
+        <a th:href="@{/rooms}">
+            Rooms
+        </a>
+
+        <a th:href="@{/booking}">
+            Booking
+        </a>
+
+        <a th:href="@{/contact}">
+            Contact
+        </a>
+
+    </nav>
+
+    <button class="nav-btn">
+        Book Stay
+    </button>
+
+</header>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <p class="tag">
+            5 STAR LUXURY EXPERIENCE
+        </p>
+
+        <h1>
+            Live Inside
+            Pure Luxury
+        </h1>
+
+        <p class="hero-text">
+
+            Experience premium hospitality,
+            elegant interiors, peaceful ambience,
+            luxury dining and unforgettable comfort.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a th:href="@{/rooms}" class="primary-btn">
+
+                Explore Rooms
+
+            </a>
+
+            <a th:href="@{/booking}" class="secondary-btn">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img th:src="@{/images/roomindex.jpg}" alt="Luxury Hotel">
+
+        <div class="floating-card">
+
+            <p>
+                PRESIDENTIAL SUITE
+            </p>
+
+            <h3>
+                Premium Luxury Experience
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services">
+
+    <div class="section-title">
+
+        <p>
+            PREMIUM SERVICES
+        </p>
+
+        <h2>
+            Crafted For Luxury
+        </h2>
+
+    </div>
+
+    <div class="services-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="service-card">
+
+            <div class="service-number">
+                01
+            </div>
+
+            <h3>
+                Luxury Rooms
+            </h3>
+
+            <p>
+
+                Elegant suites designed with
+                premium interiors and peaceful ambience.
+
+            </p>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="service-card">
+
+            <div class="service-number">
+                02
+            </div>
+
+            <h3>
+                Fine Dining
+            </h3>
+
+            <p>
+
+                Taste world-class cuisine
+                prepared by expert chefs.
+
+            </p>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="service-card">
+
+            <div class="service-number">
+                03
+            </div>
+
+            <h3>
+                Spa Wellness
+            </h3>
+
+            <p>
+
+                Relax your body and mind
+                with luxury wellness treatments.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     EXPERIENCE SECTION
+========================= -->
+
+<section class="experience">
+
+    <h2>
+        Timeless Luxury Experience
+    </h2>
+
+    <p>
+
+        Enjoy elegant comfort, premium hospitality,
+        luxury interiors and unforgettable memories
+        designed for world-class living.
+
+    </p>
+
+    <a th:href="@{/booking}" class="primary-btn">
+
+        Reserve Your Stay
+
+    </a>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        Royal Stay
+    </h2>
+
+    <p>
+        Luxury Hotel & Resort Experience
+    </p>
+
+</footer>
+
+</body>
+
+</html>

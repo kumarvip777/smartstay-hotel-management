@@ -1,10 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+  <title>Contact</title>
+
+  <link rel="stylesheet" th:href="@{/style.css}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
-$END$
+
+<!-- Navbar -->
+<nav>
+
+  <h2 th:text="${hotelName}"></h2>
+
+  <ul>
+
+    <li>
+      <a th:href="@{/}">
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a th:href="@{/rooms}">
+        Rooms
+      </a>
+    </li>
+
+    <li>
+      <a th:href="@{/booking}">
+        Booking
+      </a>
+    </li>
+
+    <li>
+      <a th:href="@{/contact}">
+        Contact
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- Contact Page -->
+<section class="contact-page">
+
+  <div class="contact-container">
+
+    <h1>Contact Us</h1>
+
+    <form th:action="@{/saveContact}"
+          th:object="${contact}"
+          method="post">
+
+      <!-- Name -->
+      <input type="text"
+             th:field="*{name}"
+             placeholder="Enter Your Name">
+
+      <!-- Email -->
+      <input type="email"
+             th:field="*{email}"
+             placeholder="Enter Your Email">
+
+      <!-- Subject -->
+      <input type="text"
+             th:field="*{subject}"
+             placeholder="Enter Subject">
+
+      <!-- Message -->
+      <textarea
+              th:field="*{message}"
+              placeholder="Enter Message">
+            </textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
 </body>
 </html>
