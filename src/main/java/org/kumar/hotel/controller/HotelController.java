@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HotelController {
+    //test
 
     private final RoomService roomService;
 
