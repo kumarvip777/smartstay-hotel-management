@@ -1,10 +1,10 @@
 package org.kumar.hotel.repository;
 
-import org.kumar.hotel.model.Booking;
+import org.kumar.hotel.model.Hotel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookingRepository extends JpaRepository<Booking, Long> {
+public interface HotelRepository extends JpaRepository<Hotel, Long> {
 
 }
