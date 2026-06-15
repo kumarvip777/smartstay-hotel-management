@@ -1,94 +1,129 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 
-  <title>Contact</title>
+    <meta charset="UTF-8">
 
-  <link rel="stylesheet" th:href="@{/style.css}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet"
+          th:href="@{/style.css}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
+<!-- =========================
+     NAVBAR
+========================= -->
 
-  <h2 th:text="${hotelName}"></h2>
+<header class="navbar">
 
-  <ul>
+    <div class="logo">
+        Royal Stay
+    </div>
 
-    <li>
-      <a th:href="@{/}">
-        Home
-      </a>
-    </li>
+    <nav class="nav-links">
 
-    <li>
-      <a th:href="@{/rooms}">
-        Rooms
-      </a>
-    </li>
+        <a th:href="@{/}">
+            Home
+        </a>
 
-    <li>
-      <a th:href="@{/booking}">
-        Booking
-      </a>
-    </li>
+        <a th:href="@{/rooms}">
+            Rooms
+        </a>
 
-    <li>
-      <a th:href="@{/contact}">
-        Contact
-      </a>
-    </li>
+        <a th:href="@{/booking}">
+            Booking
+        </a>
 
-  </ul>
+        <a th:href="@{/contact}">
+            Contact
+        </a>
 
-</nav>
+    </nav>
 
-<!-- Contact Page -->
+    <a th:href="@{/booking}"
+       class="nav-btn">
+
+        Book Stay
+
+    </a>
+
+</header>
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+
 <section class="contact-page">
 
-  <div class="contact-container">
+    <div class="contact-container">
 
-    <h1>Contact Us</h1>
+        <h1>
+            Contact Us
+        </h1>
 
-    <form th:action="@{/saveContact}"
-          th:object="${contact}"
-          method="post">
+        <p>
+            We'd love to hear from you.
+            Send us a message.
+        </p>
 
-      <!-- Name -->
-      <input type="text"
-             th:field="*{name}"
-             placeholder="Enter Your Name">
+        <form th:action="@{/saveContact}"
+              th:object="${contact}"
+              method="post">
 
-      <!-- Email -->
-      <input type="email"
-             th:field="*{email}"
-             placeholder="Enter Your Email">
+            <!-- Name -->
 
-      <!-- Subject -->
-      <input type="text"
-             th:field="*{subject}"
-             placeholder="Enter Subject">
+            <input type="text"
+                   th:field="*{name}"
+                   placeholder="Enter Your Name"
+                   required>
 
-      <!-- Message -->
-      <textarea
-              th:field="*{message}"
-              placeholder="Enter Message">
+            <!-- Email -->
+
+            <input type="email"
+                   th:field="*{email}"
+                   placeholder="Enter Your Email"
+                   required>
+
+            <!-- Subject -->
+
+            <input type="text"
+                   th:field="*{subject}"
+                   placeholder="Enter Subject"
+                   required>
+
+            <!-- Message -->
+
+            <textarea th:field="*{message}"
+                      placeholder="Enter Your Message"
+                      rows="5"
+                      required>
             </textarea>
 
-      <button type="submit">
-        Send Message
-      </button>
+            <!-- Submit Button -->
 
-    </form>
+            <button type="submit"
+                    class="primary-btn">
 
-  </div>
+                Send Message
+
+            </button>
+
+        </form>
+
+    </div>
 
 </section>
 
 </body>
+
 </html>

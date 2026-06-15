@@ -3,9 +3,15 @@
 
 <head>
 
-    <title>Booking</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Room Booking</title>
+
+    <link rel="stylesheet"
+          th:href="@{/style.css}">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
@@ -14,58 +20,94 @@
 
 <body>
 
-<!-- Navbar -->
-<nav>
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <h2 th:text="${hotelName}"></h2>
+<header class="navbar">
 
-    <ul>
+    <div class="logo">
+        Royal Stay
+    </div>
 
-        <li>
-            <a th:href="@{/}">Home</a>
-        </li>
+    <nav class="nav-links">
 
-        <li>
-            <a th:href="@{/rooms}">Rooms</a>
-        </li>
+        <a th:href="@{/}">
+            Home
+        </a>
 
-        <li>
-            <a th:href="@{/booking}">Booking</a>
-        </li>
+        <a th:href="@{/rooms}">
+            Rooms
+        </a>
 
-        <li>
-            <a th:href="@{/contact}">Contact</a>
-        </li>
+        <a th:href="@{/booking}">
+            Booking
+        </a>
 
-    </ul>
+        <a th:href="@{/contact}">
+            Contact
+        </a>
 
-</nav>
+    </nav>
 
-<!-- Booking Section -->
+    <a th:href="@{/booking}"
+       class="nav-btn">
+
+        Book Stay
+
+    </a>
+
+</header>
+
+<!-- =========================
+     BOOKING SECTION
+========================= -->
+
 <section class="booking-page">
 
     <div class="booking-form-container">
 
-        <h1>Room Booking</h1>
+        <h1>
+            Book Your Room
+        </h1>
 
         <form th:action="@{/saveBooking}"
               th:object="${booking}"
               method="post">
 
-            <!-- Name -->
+            <!-- Customer Name -->
+
             <input type="text"
                    th:field="*{customerName}"
                    placeholder="Enter Your Name">
 
-            <!-- Check In -->
+            <span class="error"
+                  th:if="${#fields.hasErrors('customerName')}"
+                  th:errors="*{customerName}">
+            </span>
+
+            <!-- Check In Date -->
+
             <input type="date"
                    th:field="*{checkInDate}">
 
-            <!-- Check Out -->
+            <span class="error"
+                  th:if="${#fields.hasErrors('checkInDate')}"
+                  th:errors="*{checkInDate}">
+            </span>
+
+            <!-- Check Out Date -->
+
             <input type="date"
                    th:field="*{checkOutDate}">
 
+            <span class="error"
+                  th:if="${#fields.hasErrors('checkOutDate')}"
+                  th:errors="*{checkOutDate}">
+            </span>
+
             <!-- Room Type -->
+
             <select th:field="*{roomType}">
 
                 <option value="">
@@ -76,18 +118,28 @@
                     Single Room
                 </option>
 
-                <option value="Double Room">
-                    Double Room
-                </option>
-
                 <option value="Deluxe Room">
                     Deluxe Room
                 </option>
 
+                <option value="Luxury Suite">
+                    Luxury Suite
+                </option>
+
             </select>
 
-            <button type="submit">
+            <span class="error"
+                  th:if="${#fields.hasErrors('roomType')}"
+                  th:errors="*{roomType}">
+            </span>
+
+            <!-- Submit Button -->
+
+            <button type="submit"
+                    class="primary-btn">
+
                 Book Now
+
             </button>
 
         </form>
@@ -97,4 +149,5 @@
 </section>
 
 </body>
+
 </html>

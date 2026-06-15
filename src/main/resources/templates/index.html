@@ -5,19 +5,25 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Royal Stay Luxury Hotel</title>
 
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
-    <!-- STYLE CSS -->
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/style.css}">
 
 </head>
 
@@ -53,9 +59,10 @@
 
     </nav>
 
-    <button class="nav-btn">
+    <a th:href="@{/booking}"
+       class="nav-btn">
         Book Stay
-    </button>
+    </a>
 
 </header>
 
@@ -86,13 +93,15 @@
 
         <div class="hero-buttons">
 
-            <a th:href="@{/rooms}" class="primary-btn">
+            <a th:href="@{/rooms}"
+               class="primary-btn">
 
                 Explore Rooms
 
             </a>
 
-            <a th:href="@{/booking}" class="secondary-btn">
+            <a th:href="@{/booking}"
+               class="secondary-btn">
 
                 Book Now
 
@@ -104,7 +113,8 @@
 
     <div class="hero-right">
 
-        <img th:src="@{/images/roomindex.jpg}" alt="Luxury Hotel">
+        <img th:src="@{/images/roomindex.jpg}"
+             alt="Luxury Hotel">
 
         <div class="floating-card">
 
@@ -142,8 +152,6 @@
 
     <div class="services-grid">
 
-        <!-- CARD 1 -->
-
         <div class="service-card">
 
             <div class="service-number">
@@ -163,8 +171,6 @@
 
         </div>
 
-        <!-- CARD 2 -->
-
         <div class="service-card">
 
             <div class="service-number">
@@ -183,8 +189,6 @@
             </p>
 
         </div>
-
-        <!-- CARD 3 -->
 
         <div class="service-card">
 
@@ -227,7 +231,8 @@
 
     </p>
 
-    <a th:href="@{/booking}" class="primary-btn">
+    <a th:href="@{/booking}"
+       class="primary-btn">
 
         Reserve Your Stay
 
@@ -247,6 +252,10 @@
 
     <p>
         Luxury Hotel & Resort Experience
+    </p>
+
+    <p>
+        © 2026 Royal Stay. All Rights Reserved.
     </p>
 
 </footer>

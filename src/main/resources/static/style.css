@@ -851,3 +851,191 @@ footer p{
         font-size:2.5rem;
     }
 }
+
+/* =========================
+   ROOMS PAGE
+========================= */
+
+.rooms-header{
+    padding-top:150px;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.rooms-header h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.rooms-header p{
+    color:#d1d1d1;
+}
+
+.room-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    padding-bottom:80px;
+}
+
+.room-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+}
+
+.room-image img{
+    height:250px;
+    object-fit:cover;
+}
+
+.room-details{
+    padding:25px;
+}
+
+.room-details h2{
+    margin-bottom:15px;
+}
+
+.room-details p{
+    margin-bottom:10px;
+}
+
+/* =========================
+   BOOKING PAGE
+========================= */
+
+.booking-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:120px;
+}
+
+.booking-form-container{
+    width:500px;
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.booking-form-container h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.booking-form-container form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.booking-form-container input,
+.booking-form-container select{
+    padding:14px;
+    border:none;
+    border-radius:10px;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:120px;
+}
+
+.contact-container{
+    width:600px;
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.contact-container h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.contact-container form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-container input,
+.contact-container textarea{
+    padding:14px;
+    border:none;
+    border-radius:10px;
+}
+
+.contact-container textarea{
+    min-height:150px;
+    resize:none;
+}
+
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.success-box{
+    text-align:center;
+    padding:50px;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+}
+
+.success-box h1{
+    margin-bottom:20px;
+}
+
+.table-container{
+    width:90%;
+    margin:auto;
+    overflow-x:auto;
+}
+
+.booking-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:50px;
+}
+
+.booking-table th,
+.booking-table td{
+    padding:15px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.booking-table th{
+    background:rgba(255,255,255,0.1);
+}
+
+.booking-table tr:hover{
+    background:rgba(255,255,255,0.05);
+}
+.error{
+    color:red;
+    font-size:14px;
+    margin-top:-10px;
+    margin-bottom:10px;
+    display:block;
+}
