@@ -3,9 +3,15 @@
 
 <head>
 
-    <title>Rooms</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rooms - Royal Stay</title>
+
+    <link rel="stylesheet"
+          th:href="@{/style.css}">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
@@ -15,38 +21,45 @@
 <body>
 
 <!-- Navbar -->
-<nav>
+<header class="navbar">
 
     <div class="logo">
-        <h2 th:text="${hotelName}"></h2>
+        Royal Stay
     </div>
 
-    <ul>
+    <nav class="nav-links">
 
-        <li>
-            <a th:href="@{/}">Home</a>
-        </li>
+        <a th:href="@{/}">
+            Home
+        </a>
 
-        <li>
-            <a th:href="@{/rooms}">Rooms</a>
-        </li>
+        <a th:href="@{/rooms}">
+            Rooms
+        </a>
 
-        <li>
-            <a th:href="@{/booking}">Booking</a>
-        </li>
+        <a th:href="@{/booking}">
+            Booking
+        </a>
 
-        <li>
-            <a th:href="@{/contact}">Contact</a>
-        </li>
+        <a th:href="@{/contact}">
+            Contact
+        </a>
 
-    </ul>
+    </nav>
 
-</nav>
+    <a th:href="@{/booking}"
+       class="nav-btn">
+        Book Stay
+    </a>
+
+</header>
 
 <!-- Rooms Header -->
 <section class="rooms-header">
 
-    <h1>Our Luxury Rooms</h1>
+    <h1>
+        Our Luxury Rooms
+    </h1>
 
     <p>
         Experience comfort, elegance and premium hospitality.
@@ -59,14 +72,13 @@
 
     <div class="room-container">
 
-        <!-- Thymeleaf Loop -->
         <div class="room-card"
              th:each="room : ${rooms}">
 
             <!-- Room Image -->
             <div class="room-image">
 
-                <img th:src="@{${room.imageUrl}}"
+                <img th:src="${room.imageUrl}"
                      alt="Room Image">
 
             </div>
@@ -74,22 +86,38 @@
             <!-- Room Details -->
             <div class="room-details">
 
-                <h2 th:text="${room.name}"></h2>
+                <h2 th:text="${room.name}">
+                    Room Name
+                </h2>
 
                 <p>
-                    Type :
-                    <span th:text="${room.type}"></span>
+
+                    <strong>Type:</strong>
+
+                    <span th:text="${room.type}">
+                        AC
+                    </span>
+
                 </p>
 
                 <p>
-                    Price :
-                    ₹<span th:text="${room.price}"></span>
+
+                    <strong>Price:</strong>
+
+                    ₹<span th:text="${room.price}">
+                        5000
+                    </span>
+
                     / Night
+
                 </p>
 
-                <button>
+                <a th:href="@{/booking}"
+                   class="primary-btn">
+
                     Book Now
-                </button>
+
+                </a>
 
             </div>
 
@@ -100,4 +128,5 @@
 </section>
 
 </body>
+
 </html>

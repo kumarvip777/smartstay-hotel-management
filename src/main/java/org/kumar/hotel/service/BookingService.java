@@ -4,6 +4,8 @@ import org.kumar.hotel.model.Booking;
 import org.kumar.hotel.repository.BookingRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookingService {
 
@@ -16,4 +18,9 @@ public class BookingService {
     public Booking saveBooking(Booking booking) {
         return bookingRepository.save(booking);
     }
+
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
+    }
+
 }

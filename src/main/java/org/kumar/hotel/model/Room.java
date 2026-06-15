@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,11 +19,21 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Hotel Name is Required")
     private String name;
 
-    private String type;
+    @NotBlank(message = "Brand is Required")
+    private String brand;
 
-    private double price;
+    @NotBlank(message = "Tagline is Required")
+    private String tagline;
 
-    private String imageUrl;
+    @NotBlank(message = "Description is Required")
+    private String description;
+
+    @NotBlank(message = "Address is Required")
+    private String address;
+
+    @NotBlank(message = "Phone Number is Required")
+    private String phone;
 }
